@@ -1,0 +1,30 @@
+
+IoTests is a benchmark testing suite for Java IO.
+
+How to run
+----------
+
+	1. cd IoTests
+	2. java -cp target/classes:target/test-classes test.performance.BenchmarkTest [SINGLE|MULTI|NIO]
+
+My results
+----------
+
+- HW - I ran the tests on a Sun machine:
+
+	1. Memory: 4GB
+	2. Processor: Dual-Core AMD Opteron 1214x2
+	3. OS: ubuntu 12.04 64-bit
+
+- JVM - The JVM was run with the following options:
+
+	java -Xmx2048m -cp target/classes:target/test-classes test.performance.BenchmarkTest [SINGLE|MULTI|NIO]
+
+- Results for src/main/resources/test-file-5M.txt (5 million lines) -
+
+		# Lines -->	-	2M	1.5M	1M	500K	100K	10K
+	SINGLE			39.6	x	x	x	x	x	x
+	NIO (8192 buffer)	36.7	x	x	x	x	x	x
+	MULTI			x	112.8	105	81.6	71.3	41.5	32.7
+
+Use of the package java.nio doesn't make much of an improvement over java.io, since character reading is being tested. However, the multi-threaded class (with chunks of 10K lines) proves that when heavy processing is involved, multiple worker threads do speed up the performance.
