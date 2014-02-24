@@ -27,4 +27,6 @@ My results
 	NIO (8192 buffer)	36.7	x	x	x	x	x	x
 	MULTI			x	112.8	105	81.6	71.3	41.5	32.7
 
-Use of the package java.nio doesn't make much of an improvement over java.io, since character reading is being tested. However, the multi-threaded class (with chunks of 10K lines) proves that when heavy processing is involved, multiple worker threads do speed up the performance.
+Use of the package java.nio doesn't make much of an improvement over java.io, since character reading is being tested.
+However, the multi-threaded class (with chunks of 10K lines) proves that when heavy processing is involved, 
+multiple worker threads do speed up the performance.

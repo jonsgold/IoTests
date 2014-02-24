@@ -1,4 +1,4 @@
 IoTests
 =======
 
-IO test suite, for benchmarking different Java IO solutions
+Test suite for benchmarking different Java IO solutions
