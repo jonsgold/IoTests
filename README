@@ -19,7 +19,7 @@ My results
 
 	java -Xmx2048m -cp target/classes:target/test-classes test.performance.BenchmarkTest [SINGLE|MULTI|NIO]
 
-- Results for text file of 5 million lines-
+- Results for text file of 5 million lines:
 
 	# Lines per worker -->	-	2M	1.5M	1M	500K	100K	10K
 	Mode
