@@ -4,7 +4,13 @@ How to run
 ----------
 
 	1. cd IoTests
-	2. java -cp target/classes:target/test-classes test.performance.BenchmarkTest [SINGLE|MULTI|NIO]
+	2. edit src/main/resources/config.properties
+		a. debug: true/false
+		b. input-file: path to test file to read
+		c. iterations: number of iterations to run the test
+		d. multi-thread-processing-number-of-lines: size of chunk to send to each worker in the MULTI test
+		e. nio-buffer-size: size of buffer in the NIO test
+	3. java -cp target/classes:target/test-classes test.performance.BenchmarkTest [SINGLE|MULTI|NIO]
 
 My results
 ----------
